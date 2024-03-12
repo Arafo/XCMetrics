@@ -23,10 +23,12 @@ import Storage
 
 func routes(_ app: Application) throws {
     app.get { req in
+        req.logger.info("\(req)")
         return "It works!"
     }
 
     app.get("hello") { req -> String in
+        req.logger.info("\(req)")
         return "Hello, world!"
     }
 
